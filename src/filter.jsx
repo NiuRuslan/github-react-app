@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Filter({setLicense}) {
+export default function Filter({ setLicense }) {
   const [licences, setLicences] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.github.com/licenses')
+    fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/licenses')
       .then((res) => res.json())
       .then((data) => setLicences(data));
     return () => {
@@ -18,8 +18,8 @@ export default function Filter({setLicense}) {
   ));
 
   const onHandleChange = (event) => {
-    setLicense(event.target.value)
-  }
+    setLicense(event.target.value);
+  };
 
   return (
     <select defaultValue="DEFAULT" onChange={onHandleChange}>
