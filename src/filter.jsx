@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
 export default function Filter({ setLicense }) {
   const [licences, setLicences] = useState([]);
 
   useEffect(() => {
-    fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/licenses')
+    fetch('https://api.github.com/licenses')
       .then((res) => res.json())
-      .then((data) => setLicences(data));
+      .then((data) => setLicences(data))
+      .catch((e) => console.log(e));
     return () => {
     };
   }, []);
@@ -22,11 +24,13 @@ export default function Filter({ setLicense }) {
   };
 
   return (
-    <select defaultValue="DEFAULT" onChange={onHandleChange}>
-      <option value="DEFAULT" disabled>
-        Select license for filter
-      </option>
-      {list}
-    </select>
+    <div className="select">
+      <select defaultValue="DEFAULT" onChange={onHandleChange} className="browser-default">
+        <option value="DEFAULT" disabled>
+          Select license to filter
+        </option>
+        {list}
+      </select>
+    </div>
   );
 }

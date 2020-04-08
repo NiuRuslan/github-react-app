@@ -1,27 +1,128 @@
-.App {
+body {
   text-align: center;
-  background-color: #282c34;
-}
-.App-header {
+  background-color: #0B4B8E; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#root {
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 2em;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search {
+  font-size: 1em;
+  width: 80%;
+  padding: 0.2em;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #6293C7;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.search:focus{
+  outline: none;
+  border-bottom: 2px solid white;
+}
+
+::placeholder{
+  color:#6293C7;
+}
+
+button {
+  background: none; /* Green */
+  border: none;
+  color: #6293C7;
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:focus{
+  outline: none;
+}
+
+button:hover {
+  color: white;
+}
+
+a {
+  color: #EDB86B;
+}
+
+h4 {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 5.3rem;
+  margin-left: 1em;
+}
+
+select {
+  outline: none;
+  border: none;
+  background: #042F5C;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  height: 2em;
+  line-height: 3;
+  background: #042F5C;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  font-size: 80%;
+  flex: 1;
+  padding: 0 .5em;
+  color: #6293C7;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  font-size: 0.7em;
+  position: absolute;
+  color: #0B4B8E;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #042F5C;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+.select:hover::after {
+  color: white;
+}
+
+option {
+  font-size: 1em;
+}
+
+img {
+  width: 100%
 }

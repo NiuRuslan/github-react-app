@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function Search({setQuery}) {
   const [entered, setEntered] = useState('');
@@ -13,11 +13,12 @@ export default function Search({setQuery}) {
   return (
     <form onSubmit={onHandleSubmit}>
       <input
-        placeholder="Enter the name of repo for search..."
+        placeholder="Search by repo's name..."
         value={entered}
         onChange={onHandleChange}
+        className="search"
       />
-      <button type="submit">Find</button>
+      <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
     </form>
   );
 }

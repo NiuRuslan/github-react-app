@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Search from './search'
+import Search from './search';
 import Filter from './filter';
 import GitHubInfo from './github-info';
 import './App.css';
@@ -14,13 +14,13 @@ function App() {
   }, [license, query]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <header>
         <Search setQuery={setQuery} />
         <Filter setLicense={setLicense} />
-        <GitHubInfo license={license} query={query} />
       </header>
-    </div>
+      <GitHubInfo license={license} query={query} />
+    </>
   );
 }
 
