@@ -128,25 +128,22 @@ img {
   width: 80%;
 }
 
-.pagination a {
+.pagination button {
   color: #042F5C;
   padding: 1rem;
   text-decoration: none;
   transition: opacity 0.3s;
 }
 
-.pagination a.active {
+.pagination button.active {
   color: white;
+  cursor: default;
 }
 
-.pagination a.disabled{
+.pagination button.disabled{
   display: none;
 }
 
-.pagination a:hover:not(.active) {
-  cursor: pointer;
-}
-
-.pagination a:not(:hover) {
+.pagination button:not(:hover) {
   opacity: 50%;
 }

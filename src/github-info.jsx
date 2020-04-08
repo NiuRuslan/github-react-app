@@ -17,10 +17,8 @@ export default function GitHubInfo({ license, query }) {
       .then((res) => res.json())
       .then((data) => {
         setRepo(data.items);
-        const total = Math.ceil((data.total_count > 1000 ? 1000 : data.total_count) / 30 );
+        const total = Math.ceil((data.total_count > 1000 ? 1000 : data.total_count) / 30);
         setPages({ total, current: pages.current });
-        console.log((pages));
-        
       })
       .then(() => setLoading(false))
       .catch(() => setError(true));

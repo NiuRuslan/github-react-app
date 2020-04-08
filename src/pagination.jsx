@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export default function Pagination({ pages, setPages }) {
   const { total, current } = pages;
@@ -12,31 +12,21 @@ export default function Pagination({ pages, setPages }) {
 
   return (
     <div className="pagination">
-      <a className={current === 1 ? 'disabled' : ''} onClick={() => choosePage(1)}>
-        {' '}
+      <button className={current === 1 ? 'disabled' : ''} onClick={() => choosePage(1)}>
         {'<<'}
-        {' '}
-      </a>
-      <a className={current === 1 ? 'disabled' : ''} onClick={() => choosePage(current - 1)}>
-        {' '}
+      </button>
+      <button className={current === 1 ? 'disabled' : ''} onClick={() => choosePage(current - 1)}>
         {'<'}
-        {' '}
-      </a>
-      <a className="active">
-        {' '}
+      </button>
+      <button className="active">
         {current}
-        {' '}
-      </a>
-      <a className={current === total ? 'disabled' : ''} onClick={() => choosePage(current + 1)}>
-        {' '}
+      </button>
+      <button className={current === total ? 'disabled' : ''} onClick={() => choosePage(current + 1)} title={current + 1}>
         {'>'}
-        {' '}
-      </a>
-      <a className={current === total ? 'disabled' : ''} onClick={() => choosePage(total)} title={total}>
-        {' '}
+      </button>
+      <button className={current === total ? 'disabled' : ''} onClick={() => choosePage(total)} title={total}>
         {'>>'}
-        {' '}
-      </a>
+      </button>
     </div>
   );
 }
