@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: #0B4B8E; 
+  background-color: #0b4b8e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@ body {
 #root {
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 2em;
+  padding: 1em;
 }
 
 form {
@@ -21,27 +21,27 @@ form {
 .search {
   font-size: 1em;
   width: 80%;
-  padding: 0.2em;
+  padding: 0.2rem;
   background: none;
   border: none;
-  border-bottom: 2px solid #6293C7;
+  border-bottom: 2px solid #6293c7;
   color: white;
   transition-duration: 0.4s;
 }
 
-.search:focus{
+.search:focus {
   outline: none;
   border-bottom: 2px solid white;
 }
 
-::placeholder{
-  color:#6293C7;
+::placeholder {
+  color: #6293c7;
 }
 
 button {
   background: none; /* Green */
   border: none;
-  color: #6293C7;
+  color: #6293c7;
   font-size: 1em;
   padding: 1em;
   text-align: center;
@@ -51,7 +51,7 @@ button {
   cursor: pointer;
 }
 
-button:focus{
+button:focus {
   outline: none;
 }
 
@@ -60,7 +60,7 @@ button:hover {
 }
 
 a {
-  color: #EDB86B;
+  color: #edb86b;
 }
 
 h4 {
@@ -81,39 +81,36 @@ span {
 select {
   outline: none;
   border: none;
-  background: #042F5C;
+  background: #042f5c;
+  font-size: 80%;
+  flex: 1;
+  padding: 0 0.5em;
+  color: #6293c7;
+  cursor: pointer;
 }
 
-/* Custom Select */
 .select {
   position: relative;
   display: flex;
   height: 2em;
   line-height: 3;
-  background: #042F5C;
+  background: #042f5c;
   overflow: hidden;
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
-select {
-  font-size: 80%;
-  flex: 1;
-  padding: 0 .5em;
-  color: #6293C7;
-  cursor: pointer;
-}
-/* Arrow */
+
 .select::after {
-  content: '\25BC';
+  content: "\25BC";
   font-size: 0.7em;
   position: absolute;
-  color: #0B4B8E;
+  color: #0b4b8e;
   top: 0;
   right: 0;
   padding: 0 1em;
-  background: #042F5C;
+  background: #042f5c;
   cursor: pointer;
   pointer-events: none;
-  transition: .25s all ease;
+  transition: 0.25s all ease;
 }
 .select:hover::after {
   color: white;
@@ -124,5 +121,32 @@ option {
 }
 
 img {
-  width: 100%
+  width: 100%;
+}
+
+.error {
+  width: 80%;
+}
+
+.pagination a {
+  color: #042F5C;
+  padding: 1rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.pagination a.active {
+  color: white;
+}
+
+.pagination a.disabled{
+  display: none;
+}
+
+.pagination a:hover:not(.active) {
+  cursor: pointer;
+}
+
+.pagination a:not(:hover) {
+  opacity: 50%;
 }
