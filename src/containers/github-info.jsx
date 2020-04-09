@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Loader from './loader';
-import Error from './error';
-import Pagination from './pagination';
-import EmptyList from './empty';
+import Loader from '../messages/loader';
+import Error from '../messages/error';
+import Pagination from '../components/pagination';
+import EmptyList from '../messages/empty';
 
 export default function GitHubInfo({ license, query, pages, setPages }) {
   const [repos, setRepo] = useState([]);

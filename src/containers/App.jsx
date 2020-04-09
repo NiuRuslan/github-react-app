@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Search from './search';
-import Filter from './filter';
+import Search from '../components/search';
+import Filter from '../components/filter';
 import GitHubInfo from './github-info';
-import './App.css';
 
 function App() {
   const [license, setLicense] = useState(null);
