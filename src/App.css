@@ -121,7 +121,7 @@ option {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .error {
@@ -145,5 +145,5 @@ img {
 }
 
 .pagination button:not(:hover) {
-  opacity: 50%;
+  opacity: 0.5;
 }

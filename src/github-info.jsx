@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Loader from './loader';
 import Error from './error';
 import Pagination from './pagination';
+import EmptyList from './empty';
 
-export default function GitHubInfo({ license, query }) {
+export default function GitHubInfo({ license, query, pages, setPages }) {
   const [repos, setRepo] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [pages, setPages] = useState({ total: 1, current: 1 });
 
   function requestAPI(filter = '') {
     const monthAgo = new Date(Date.now() - 1000 * 3600 * 24 * 31).toISOString().slice(0, 10);
@@ -36,7 +36,7 @@ export default function GitHubInfo({ license, query }) {
     return new Date(oldDate).toLocaleDateString();
   }
 
-  const list = repos.map((repo) => (
+  let list = repos.map((repo) => (
     <div key={repo.id}>
       <h4>
         <a href={repo.html_url}>{repo.name}</a>
@@ -57,6 +57,10 @@ export default function GitHubInfo({ license, query }) {
   ));
 
   if (error) return <Error />;
+
+  if (list.length === 0) {
+    list = <EmptyList query={query} license={license} />;
+  }
 
   return (
     <>

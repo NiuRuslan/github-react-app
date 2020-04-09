@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Search({setQuery}) {
+export default function Search({ setQuery, setPages }) {
   const [entered, setEntered] = useState('');
 
   const onHandleChange = (e) => setEntered(e.target.value);
@@ -8,6 +8,7 @@ export default function Search({setQuery}) {
   const onHandleSubmit = (event) => {
     event.preventDefault();
     setQuery(entered);
+    setPages((total) => ({ ...total, current: 1 }));
   };
 
   return (
@@ -18,7 +19,7 @@ export default function Search({setQuery}) {
         onChange={onHandleChange}
         className="search"
       />
-      <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+      <button type="submit" aria-label="search"><i className="fa fa-search" aria-hidden="true" /></button>
     </form>
   );
 }

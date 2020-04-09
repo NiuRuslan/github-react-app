@@ -7,19 +7,18 @@ import './App.css';
 function App() {
   const [license, setLicense] = useState(null);
   const [query, setQuery] = useState('');
+  const [pages, setPages] = useState({ total: 1, current: 1 });
 
   useEffect(() => {
-    console.log(license);
-    console.log(query);
   }, [license, query]);
 
   return (
     <>
       <header>
-        <Search setQuery={setQuery} />
-        <Filter setLicense={setLicense} />
+        <Search setQuery={setQuery} setPages={setPages} />
+        <Filter setLicense={setLicense} setPages={setPages} />
       </header>
-      <GitHubInfo license={license} query={query} />
+      <GitHubInfo license={license} query={query} setPages={setPages} pages={pages} />
     </>
   );
 }

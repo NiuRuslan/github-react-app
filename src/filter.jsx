@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Filter({ setLicense }) {
+export default function Filter({ setLicense, setPages }) {
   const [licences, setLicences] = useState([]);
 
   useEffect(() => {
     fetch('https://api.github.com/licenses')
       .then((res) => res.json())
       .then((data) => setLicences(data))
-      .catch((e) => console.log(e));
+      .catch(() => setLicences([{ name: 'Something went wrong. Try again later' }]));
     return () => {
     };
   }, []);
 
   const list = licences.map((license) => (
-    <option key={license.key} value={license.key}>
+    <option key={license.key} value={license.key} disabled={!license.key}>
       {license.name}
     </option>
   ));
 
   const onHandleChange = (event) => {
     setLicense(event.target.value);
+    setPages((total) => ({ ...total, current: 1 }));
   };
 
   return (
