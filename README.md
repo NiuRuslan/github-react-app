@@ -3,6 +3,7 @@
 The app displays a list of JavaScript repositories created over the past month, sorted by popularity (stars) with project license filtering, project name search, pagination, loader, and error display.
 
 The code is covered by manual tests.
+
 Responsive up to 320px.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
