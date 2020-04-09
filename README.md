@@ -1,12 +1,12 @@
 # The most popular GitHub JS repositories for last month
 
-[Link](https://niuruslan.github.io/github-react-app/)
-
 The app displays a list of JavaScript repositories created over the past month, sorted by popularity (stars) with project license filtering, project name search, pagination, loader, and error display.
 
 The code is covered by manual tests.
 
 Responsive up to 320px.
+
+[Link](https://niuruslan.github.io/github-react-app/)
 
 ## Available Scripts
 
