@@ -29,7 +29,12 @@ export default function Filter({ setLicense, setPages }) {
         <option value="DEFAULT" disabled>
           Select license to filter
         </option>
-        {list}
+        <option key="any" value="">
+          Any license
+        </option>
+        <optgroup label="Most common licenses">
+          {list}
+        </optgroup>
       </select>
     </div>
   );
