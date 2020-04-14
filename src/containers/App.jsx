@@ -8,9 +8,6 @@ function App() {
   const [query, setQuery] = useState('');
   const [pages, setPages] = useState({ total: 1, current: 1 });
 
-  useEffect(() => {
-  }, [license, query]);
-
   return (
     <>
       <header>
