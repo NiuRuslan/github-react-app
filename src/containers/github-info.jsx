@@ -29,7 +29,6 @@ export default function GitHubInfo({ license, query, pages, setPages }) {
     if (license) filter = `+license:${license}`;
     setLoading(true);
     requestAPI(filter);
-    return () => { };
   }, [license, query, pages.current]);
 
   function dateFormatter(oldDate) {

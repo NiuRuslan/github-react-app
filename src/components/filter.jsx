@@ -25,7 +25,7 @@ export default function Filter({ setLicense, setPages }) {
 
   return (
     <div className="select">
-      <select defaultValue="DEFAULT" onChange={onHandleChange} className="browser-default">
+      <select defaultValue="" onChange={onHandleChange} className="browser-default">
         <option value="DEFAULT" disabled>
           Select license to filter
         </option>
